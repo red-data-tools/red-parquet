@@ -1,0 +1,15 @@
+notifications:
+  email:
+    recipients:
+      - red-data-tools@ml.commit-email.info
+
+sudo: required
+
+services:
+  - docker
+
+install:
+  - docker build -t red-data-tools/red-parquet .
+
+script:
+  - docker run red-data-tools/red-parquet /bin/sh -c "bundle exec rake"
