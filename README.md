@@ -33,7 +33,11 @@ Install Red Parquet after you install Parquet GLib:
 ```ruby
 require "parquet"
 
-# TODO
+# Load Parquet data as Arrow::Table
+table = Arrow::Table.load("data.parquet")
+
+# Save Arrow::Table as Parquet data
+table.save("data.parquet")
 ```
 
 ## Dependencies
